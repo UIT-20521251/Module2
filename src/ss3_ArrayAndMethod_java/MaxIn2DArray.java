@@ -16,15 +16,14 @@ public class MaxIn2DArray {
         for (int i = 0; i < a.length; i++) {
             System.out.println(Arrays.toString(a[i]));
         }
-        MaxIn2DArray obj = new MaxIn2DArray();
-        System.out.printf("Phần tử lớn nhất trong mảng: "+ obj.maxIn2DArray(a));
+        System.out.printf("Phần tử lớn nhất trong mảng: "+ maxIn2DArray(a));
     }
-    public int maxIn2DArray(int[][] a) {
-        int max = a[0][0];
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a[i].length; j++) {
-                if (a[i][j] > max) {
-                    max = a[i][j];
+    public static int maxIn2DArray(int[][] a) {
+        int max = 0;
+        for (int[] num :a) {
+            for (int num1 : num) {
+                if (num1> max) {
+                    max = num1;
                 }
             }
         }

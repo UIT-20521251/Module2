@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class SoLanXuatHien {
     public static void main(String[] args) {
-        SoLanXuatHien obj = new SoLanXuatHien();
         int[][] a = new int[5][5];
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
@@ -21,9 +20,9 @@ public class SoLanXuatHien {
         Scanner sc = new Scanner(System.in);
         System.out.printf("Nhập phần tử bạn muốn đếm: ");
         int n = Integer.parseInt(sc.nextLine());
-        System.out.println("Số lần xuất hiện: " + obj.countElement(a,n));
+        System.out.println("Số lần xuất hiện: " + countElement(a,n));
     }
-    public int countElement(int[][] a, int b) {
+    public static int countElement(int[][] a, int b) {
         int count = 0;
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {

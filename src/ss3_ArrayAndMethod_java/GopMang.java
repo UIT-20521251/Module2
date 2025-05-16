@@ -23,12 +23,11 @@ public class GopMang {
         }
         System.out.println(Arrays.toString(b));
 
-        GopMang obj = new GopMang();
         System.out.printf("Chuỗi sau khi gộp: ");
-        System.out.println(Arrays.toString(obj.insertArray(a,b)));
+        System.out.println(Arrays.toString(insertArray(a,b)));
 
     }
-    public int[] insertArray(int[] a,int[]b) {
+    public static int[] insertArray(int[] a,int[]b) {
         int[] temp = new int[a.length + b.length];
         int index = 0;
         for (int num : a) {

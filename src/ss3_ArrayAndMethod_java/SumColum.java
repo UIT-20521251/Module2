@@ -20,11 +20,10 @@ public class SumColum {
         Scanner sc = new Scanner(System.in);
         System.out.printf("Bạn muốn tính tổng ở cột:");
         int m = Integer.parseInt(sc.nextLine());
-        SumColum obj = new SumColum();
-        System.out.printf("Tổng các phần tử trong cột: "+ obj.sumColum(a,m));
+        System.out.printf("Tổng các phần tử trong cột: "+ sumColum(a,m));
 
     }
-    public int sumColum(int[][] a, int b) {
+    public static int sumColum(int[][] a, int b) {
         int sum = 0;
         for (int i = 0; i < a.length; i++) {
             sum = sum + a[i][b];

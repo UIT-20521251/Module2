@@ -17,11 +17,10 @@ public class ThemPhanTuVaoMang {
         int b= Integer.parseInt(sc.nextLine());
         System.out.printf("Nhập index bạn muốn thêm:");
         int c= Integer.parseInt(sc.nextLine());
-        ThemPhanTuVaoMang obj = new ThemPhanTuVaoMang();
-        System.out.printf("Chuỗi sau khi thêm:"+ Arrays.toString(obj.insert(a,b,c)));
+        System.out.printf("Chuỗi sau khi thêm:"+ Arrays.toString(insert(a,b,c)));
 
     }
-    public int[] insert(int[] a,int b,int c) {
+    public static int[] insert(int[] a,int b,int c) {
         int[]  temp = new int[a.length+1];
         int index = 0;
         for (int i = 0; i < a.length; i++) {

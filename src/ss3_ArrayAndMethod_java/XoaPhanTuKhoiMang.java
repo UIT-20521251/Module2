@@ -15,10 +15,9 @@ public class XoaPhanTuKhoiMang {
         System.out.println("Chuỗi ban đầu:"+Arrays.toString(a));
         System.out.printf("Nhập phần tử bạn muốn xóa:");
         int b= Integer.parseInt(sc.nextLine());
-        XoaPhanTuKhoiMang obj = new XoaPhanTuKhoiMang();
-        System.out.printf("Chuỗi sau khi xóa:"+Arrays.toString(obj.delete(a,b)));
+        System.out.printf("Chuỗi sau khi xóa:"+Arrays.toString(delete(a,b)));
     }
-    public int[] delete(int[] a,int b) {
+    public static int[] delete(int[] a,int b) {
         int count=0;
         for (int i = 0; i < a.length; i++) {
             if (a[i] == b) count++;

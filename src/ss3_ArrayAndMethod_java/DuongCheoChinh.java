@@ -5,7 +5,6 @@ import java.util.Random;
 
 public class DuongCheoChinh {
     public static void main(String[] args) {
-        DuongCheoChinh obj = new DuongCheoChinh();
         int[][] a = new int[5][5];
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
@@ -17,9 +16,9 @@ public class DuongCheoChinh {
         for (int i = 0; i < a.length; i++) {
             System.out.println(Arrays.toString(a[i]));
         }
-        System.out.printf("Tổng các phần tử ở đường chéo chính: " +obj.SumMainDiagonal(a));
+        System.out.printf("Tổng các phần tử ở đường chéo chính: " +SumMainDiagonal(a));
     }
-    public int SumMainDiagonal(int[][] a) {
+    public static int SumMainDiagonal(int[][] a) {
         int sum = 0;
         for (int i = 0; i < a.length; i++) {
             sum += a[i][i];
