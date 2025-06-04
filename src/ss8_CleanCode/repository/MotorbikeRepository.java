@@ -11,4 +11,12 @@ public class MotorbikeRepository {
     public void add(Motorbike motorbike){
         motorbikes.add(motorbike);
     }
+    public void remove(Motorbike motorbike){
+        motorbikes.remove(motorbike);
+    }
+    public void getAllMotorbikes(){
+        for(Motorbike motorbike: motorbikes){
+            System.out.println(motorbike.toString());
+        }
+    }
 }

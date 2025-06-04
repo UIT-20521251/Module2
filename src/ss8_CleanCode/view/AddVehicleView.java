@@ -1,5 +1,12 @@
 package ss8_CleanCode.view;
 
+import ss8_CleanCode.controller.AddCarController;
+import ss8_CleanCode.controller.AddMotorbikeController;
+import ss8_CleanCode.controller.AddTruckController;
+import ss8_CleanCode.controller.AddVehicleController;
+import ss8_CleanCode.entity.Car;
+import ss8_CleanCode.entity.Motorbike;
+import ss8_CleanCode.entity.Truck;
 import ss8_CleanCode.service.AddVehicleService;
 
 import java.util.Scanner;
@@ -30,8 +37,9 @@ public class AddVehicleView {
         int numberOfSeats = Integer.parseInt(scanner.nextLine());
         System.out.print("Kiểu xe: ");
         String carType = scanner.nextLine();
-        AddVehicleService addVehicleService = new AddVehicleService();
-        addVehicleService.addCar(licensePlate,brandName,productionYear,owner,numberOfSeats,carType);
+        Car car = new Car(licensePlate, brandName, productionYear, owner,numberOfSeats, carType);
+        AddCarController addCarController = new AddCarController();
+        addCarController.add(car);
     }
     public static void addMotorbikeMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -46,8 +54,9 @@ public class AddVehicleView {
         String owner = scanner.nextLine();
         System.out.print("Công suất: ");
         int horsepower = Integer.parseInt(scanner.nextLine());
-        AddVehicleService addVehicleService = new AddVehicleService();
-        addVehicleService.addMotorbike(licensePlate,brandName,productionYear,owner,horsepower);
+        Motorbike motorbike = new Motorbike(licensePlate, brandName, productionYear, owner,horsepower);
+        AddMotorbikeController addMotorbikeController = new AddMotorbikeController();
+        addMotorbikeController.add(motorbike);
     }
     public static void addTruckMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -62,7 +71,8 @@ public class AddVehicleView {
         String owner = scanner.nextLine();
         System.out.print("Tải trọng: ");
         int loadCapacity = Integer.parseInt(scanner.nextLine());
-        AddVehicleService addVehicleService = new AddVehicleService();
-        addVehicleService.addTruck(licensePlate,brandName,productionYear,owner,loadCapacity);
+        Truck truck = new Truck(licensePlate, brandName, productionYear, owner,loadCapacity);
+        AddTruckController addTruckController = new AddTruckController();
+        addTruckController.add(truck);
     }
 }

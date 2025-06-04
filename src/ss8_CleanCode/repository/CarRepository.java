@@ -11,4 +11,10 @@ public class CarRepository {
     public void add(Car car) {
         cars.add(car);
     }
+    public void remove(Car car) {}
+    public void getAllCars() {
+        for (Car car : cars) {
+            System.out.println(car.toString());
+        }
+    }
 }

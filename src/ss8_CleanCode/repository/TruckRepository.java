@@ -12,5 +12,12 @@ public class TruckRepository {
     public void add(Truck truck) {
         trucks.add(truck);
     }
-
+    public void remove(Truck truck) {
+        trucks.remove(truck);
+    }
+    public void getAllTrucks(){
+        for(Truck truck: trucks){
+            System.out.println(truck.toString());
+        }
+    }
 }

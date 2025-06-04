@@ -16,5 +16,9 @@ public class Motorbike extends Vehicle {
     public void setHorsepower(int horsepower) {
         this.horsepower = horsepower;
     }
+    @Override
+    public String toString() {
+        return licensePlate+", "+brandName+", "+productionYear+", "+owner+", "+horsepower;
+    }
 }
 

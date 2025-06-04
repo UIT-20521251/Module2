@@ -14,27 +14,21 @@ public class AddVehicleService implements AddVehicleInterface {
     VehicleValidator vehicleValidator = new VehicleValidator();
 
     @Override
-    public void addCar(String licensePlate, String brandName, int productionYear, String owner,
-                       int numberOfSeats, String carType) {
+    public void addCar(Car car) {
 //        vehicleValidator.isValidPlate(licensePlate);
 //        vehicleValidator.isValidYear(productionYear);
 //        vehicleValidator.isValidSeat(numberOfSeats);
 //        vehicleValidator.isValidVehicleType(carType);
-        Car car =new Car(licensePlate,brandName,productionYear,owner,numberOfSeats,carType);
         cars.add(car);
     }
 
     @Override
-    public void addTruck(String licensePlate, String brandName, int productionYear, String owner,
-                         int loadCapacity) {
-        Truck truck = new Truck(licensePlate,brandName,productionYear,owner,loadCapacity);
+    public void addTruck(Truck truck) {
         trucks.add(truck);
     }
 
     @Override
-    public void addMotorbike(String licensePlate, String brandName, int productionYear, String owner,
-                            int horsepower) {
-        Motorbike motorbike= new Motorbike(licensePlate,brandName,productionYear,owner,horsepower);
+    public void addMotorbike(Motorbike motorbike) {
         motorbikes.add(motorbike);
     }
 }

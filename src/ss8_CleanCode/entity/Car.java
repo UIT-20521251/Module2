@@ -26,4 +26,9 @@ public class Car extends Vehicle {
     public void setCarType(String carType) {
         this.carType = carType;
     }
+
+    @Override
+    public String toString() {
+        return licensePlate+", "+brandName+", "+productionYear+", "+owner+", "+numberOfSeats+", "+carType;
+    }
 }
