@@ -14,9 +14,7 @@ public class MotorbikeRepository {
     public void remove(Motorbike motorbike){
         motorbikes.remove(motorbike);
     }
-    public void getAllMotorbikes(){
-        for(Motorbike motorbike: motorbikes){
-            System.out.println(motorbike.toString());
-        }
+    public List<Motorbike> getMotorbikes(){
+        return motorbikes;
     }
 }

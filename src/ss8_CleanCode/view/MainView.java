@@ -11,9 +11,8 @@ public class MainView {
         System.out.println("2. Hiện thị phương tiện");
         System.out.println("3. Xóa phương tiện");
         System.out.println("4. Thoát");
-
         System.out.print("Mời bạn nhập lựa chọn: ");
-        int choice = Integer.parseInt(scanner.nextLine());
-        return choice;
+        return Integer.parseInt(scanner.nextLine());
     }
 }
+

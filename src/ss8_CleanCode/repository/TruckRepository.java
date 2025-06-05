@@ -15,9 +15,8 @@ public class TruckRepository {
     public void remove(Truck truck) {
         trucks.remove(truck);
     }
-    public void getAllTrucks(){
-        for(Truck truck: trucks){
-            System.out.println(truck.toString());
-        }
+
+    public List<Truck> getTrucks() {
+        return trucks;
     }
 }
