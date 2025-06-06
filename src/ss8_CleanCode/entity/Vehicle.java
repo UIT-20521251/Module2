@@ -2,13 +2,13 @@ package ss8_CleanCode.entity;
 
 public abstract class Vehicle {
     protected String licensePlate;
-    protected String brandName;
+    protected Brand brandName;
     protected int productionYear;
     protected String owner;
 
-    public Vehicle(String licensePlate, String manufacturerName, int productionYear, String owner) {
+    public Vehicle(String licensePlate, Brand BrandName, int productionYear, String owner) {
         this.licensePlate = licensePlate;
-        this.brandName = manufacturerName;
+        this.brandName =BrandName;
         this.productionYear = productionYear;
         this.owner = owner;
     }
@@ -24,7 +24,7 @@ public abstract class Vehicle {
         return productionYear;
     }
 
-    public String getBrandName() {
+    public Brand getBrandName() {
         return brandName;
     }
 
@@ -40,7 +40,7 @@ public abstract class Vehicle {
         this.productionYear = productionYear;
     }
 
-    public void setBrandName(String brandName) {
+    public void setBrandName(Brand brandName) {
         this.brandName = brandName;
     }
 }

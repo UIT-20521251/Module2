@@ -22,4 +22,20 @@ public class TruckService implements TruckInterface {
     public List<Truck> showAllTrucks() {
         return truckRepository.getTrucks();
     }
+
+    @Override
+    public void removeTruck(Truck truck) {
+        truckRepository.remove(truck);
+    }
+
+    @Override
+    public Truck findTruckByPlate(String plate) {
+        for (Truck truck : truckRepository.getTrucks()) {
+            if (truck.getLicensePlate().equals(plate)) {
+                return truck;
+            }
+        }
+        return null;
+    }
 }
+

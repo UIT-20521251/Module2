@@ -15,4 +15,7 @@ public class MotorbikeController {
     public List<Motorbike> showAllMotorbikes(){
         return motorbikeService.showAllMotorbikes();
     }
+    public void remove(String plate){
+        motorbikeService.removeMotorbike(motorbikeService.findMotorbikeByPlate(plate));
+    }
 }

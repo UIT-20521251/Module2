@@ -8,4 +8,6 @@ import java.util.List;
 public interface MotorbikeInterface {
     void addMotorbike(Motorbike motorbike);
     List<Motorbike> showAllMotorbikes();
+    void removeMotorbike(Motorbike motorbike);
+    Motorbike findMotorbikeByPlate(String plate);
 }

@@ -4,9 +4,9 @@ public class Car extends Vehicle {
     private int numberOfSeats;  // Số chỗ ngồi
     private String carType;     // Kiểu xe (du lịch, xe khách)
 
-    public Car(String licensePlate, String manufacturerName, int yearOfManufacture, String owner,
+    public Car(String licensePlate, Brand brandName, int yearOfManufacture, String owner,
                int numberOfSeats, String carType) {
-        super(licensePlate, manufacturerName, yearOfManufacture, owner);
+        super(licensePlate, brandName, yearOfManufacture, owner);
         this.numberOfSeats = numberOfSeats;
         this.carType = carType;
     }
@@ -29,6 +29,6 @@ public class Car extends Vehicle {
 
     @Override
     public String toString() {
-        return licensePlate+", "+brandName+", "+productionYear+", "+owner+", "+numberOfSeats+", "+carType;
+        return licensePlate+", "+brandName.getBrandName()+", "+productionYear+", "+owner+", "+numberOfSeats+", "+carType;
     }
 }

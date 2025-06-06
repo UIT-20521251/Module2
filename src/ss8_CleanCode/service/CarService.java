@@ -19,6 +19,20 @@ public class CarService implements CarInterface {
     public List<Car> showAllCars() {
         return carRepository.getCars();
     }
+    @Override
+    public void removeCar(Car car) {
+        carRepository.remove(car);
+    }
+
+    @Override
+    public Car findCarByPlate(String plate) {
+        for (Car car : carRepository.getCars()) {
+            if (car.getLicensePlate().equals(plate)) {
+                return car;
+            }
+        }
+        return null;
+    }
 
 
 

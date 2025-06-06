@@ -3,11 +3,13 @@ package ss8_CleanCode.controller;
 
 import ss8_CleanCode.view.AddVehicleView;
 import ss8_CleanCode.view.MainView;
+import ss8_CleanCode.view.RemoveVehicleView;
 import ss8_CleanCode.view.ShowVehicleView;
 
 public class MainController {
     private static AddVehicleController addVehicleController = new AddVehicleController();
     private static ShowVehicleController showVehicleController = new ShowVehicleController();
+    private static RemoveVehicleController removeVehicleController = new RemoveVehicleController();
     private static CarController carController = new CarController();
     private static MotorbikeController motorbikeController = new MotorbikeController();
     private static TruckController truckController = new TruckController();
@@ -26,7 +28,7 @@ public class MainController {
                     showVehicleController.showVehicleController(truckController,carController,motorbikeController);
                     break;
                 case 3:
-                    //ShowVehicleView.showVehicleMenu(truckController,carController,motorbikeController);
+                    removeVehicleController.removeVehicleController(truckController,carController,motorbikeController);
                     break;
                 case 4:
                     isPause = false;

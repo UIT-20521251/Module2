@@ -14,7 +14,6 @@ public class ShowVehicleController {
         switch (choiceShowVehicle) {
             case 1:
                 List<Truck> trucks = truckController.showAllTrucks();
-                System.out.println(trucks.size());
                 ShowVehicleView.showTrucks(trucks);
                 break;
             case 2:

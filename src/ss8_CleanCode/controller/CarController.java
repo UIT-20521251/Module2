@@ -17,4 +17,7 @@ public class CarController {
     public List<Car> showAllCars(){
         return carService.showAllCars();
     }
+    public void remove(String plate){
+        carService.removeCar(carService.findCarByPlate(plate));
+    }
 }

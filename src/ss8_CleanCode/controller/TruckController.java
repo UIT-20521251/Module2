@@ -18,4 +18,8 @@ public class TruckController {
     public List<Truck> showAllTrucks(){
         return truckService.showAllTrucks();
     }
+    public void remove(String plate){
+        truckService.removeTruck(truckService.findTruckByPlate(plate));
+    }
+
 }

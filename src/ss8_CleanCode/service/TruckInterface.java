@@ -9,4 +9,6 @@ public interface TruckInterface {
 
     void addTruck(Truck truck);
     List<Truck> showAllTrucks();
+    void removeTruck(Truck truck);
+    Truck findTruckByPlate(String licensePlate);
 }
