@@ -1,11 +1,9 @@
-package ss8_CleanCode.controller;
+package ss8_CleanCode.controller.VehicleController;
 
 
 import ss8_CleanCode.entity.Truck;
 import ss8_CleanCode.service.TruckInterface;
 import ss8_CleanCode.service.TruckService;
-import ss8_CleanCode.service.CarInterface;
-import ss8_CleanCode.service.CarService;
 
 import java.util.List;
 

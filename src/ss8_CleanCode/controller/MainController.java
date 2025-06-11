@@ -1,10 +1,10 @@
 package ss8_CleanCode.controller;
 
 
-import ss8_CleanCode.view.AddVehicleView;
+import ss8_CleanCode.controller.VehicleController.CarController;
+import ss8_CleanCode.controller.VehicleController.MotorbikeController;
+import ss8_CleanCode.controller.VehicleController.TruckController;
 import ss8_CleanCode.view.MainView;
-import ss8_CleanCode.view.RemoveVehicleView;
-import ss8_CleanCode.view.ShowVehicleView;
 
 public class MainController {
     private static AddVehicleController addVehicleController = new AddVehicleController();

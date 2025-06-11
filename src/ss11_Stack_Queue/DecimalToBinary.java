@@ -5,12 +5,12 @@ import java.util.Stack;
 
 public class DecimalToBinary {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhâp số bạn muốn chuyển: ");
         int decimal= Integer.parseInt(scanner.nextLine());
         String binary = convertToBinary(decimal);
         System.out.println("Số " + decimal + " trong hệ nhị phân là: " + binary);
+
     }
 
     public static String convertToBinary(int decimal) {

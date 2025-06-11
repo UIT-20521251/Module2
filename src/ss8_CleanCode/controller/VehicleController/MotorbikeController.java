@@ -1,4 +1,4 @@
-package ss8_CleanCode.controller;
+package ss8_CleanCode.controller.VehicleController;
 
 
 import ss8_CleanCode.entity.Motorbike;
