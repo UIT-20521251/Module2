@@ -4,10 +4,10 @@ package ss8_CleanCode.controller;
 import ss8_CleanCode.controller.VehicleController.CarController;
 import ss8_CleanCode.controller.VehicleController.MotorbikeController;
 import ss8_CleanCode.controller.VehicleController.TruckController;
+import ss8_CleanCode.view.AddVehicleView;
 import ss8_CleanCode.view.MainView;
 
 public class MainController {
-    private static AddVehicleController addVehicleController = new AddVehicleController();
     private static ShowVehicleController showVehicleController = new ShowVehicleController();
     private static RemoveVehicleController removeVehicleController = new RemoveVehicleController();
     private static CarController carController = new CarController();
@@ -22,7 +22,7 @@ public class MainController {
             int choice = MainView.displayMainView();
             switch (choice) {
                 case 1:
-                    addVehicleController.addVehicle(truckController,carController,motorbikeController);
+                    AddVehicleView.addVehicleMenu();
                     break;
                 case 2:
                     showVehicleController.showVehicleController(truckController,carController,motorbikeController);

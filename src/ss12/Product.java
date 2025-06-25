@@ -35,6 +35,13 @@ public class Product implements Comparable<Product>{
     public void setPrice(int price) {
         this.price = price;
     }
+    public static Product fromCSV(String line) {
+        String[] parts = line.split(",");
+        if (parts.length == 3) {
+            return new Product(parts[0].trim(), parts[1].trim(), Integer.parseInt(parts[2].trim()));
+        }
+        return null;
+    }
     @Override
     public String toString() {
         return   id+ ", " + name + ", " + price;
