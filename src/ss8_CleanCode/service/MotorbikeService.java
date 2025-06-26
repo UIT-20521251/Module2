@@ -1,30 +1,28 @@
 package ss8_CleanCode.service;
 
-import ss8_CleanCode.entity.Car;
 import ss8_CleanCode.entity.Motorbike;
-import ss8_CleanCode.entity.Truck;
-import ss8_CleanCode.repository.CarRepository;
+import ss8_CleanCode.repository.MotorbikeRepoInterface;
 import ss8_CleanCode.repository.MotorbikeRepository;
 
 import java.util.List;
 
-public class MotorbikeService implements MotorbikeInterface {
-    private MotorbikeRepository motorbikeRepository = new MotorbikeRepository();
+public class MotorbikeService implements MotorServicebikeInterface {
+    private MotorbikeRepoInterface motorbikeRepository = new MotorbikeRepository();
     @Override
     public void addMotorbike(Motorbike car) {
         motorbikeRepository.add(car);
     }
     @Override
     public List<Motorbike> showAllMotorbikes() {
-        return motorbikeRepository.getMotorbikes();
+        return motorbikeRepository.findAllMotorbikes();
     }
-    public void removeMotorbike(Motorbike motorbike) {
-        motorbikeRepository.remove(motorbike);
+    public boolean removeMotorbike(Motorbike motorbike) {
+        return motorbikeRepository.remove(motorbike);
     }
 
     @Override
     public Motorbike findMotorbikeByPlate(String plate) {
-        for (Motorbike motorbike : motorbikeRepository.getMotorbikes()) {
+        for (Motorbike motorbike : motorbikeRepository.findAllMotorbikes()) {
             if (motorbike.getLicensePlate().equals(plate)) {
                 return motorbike;
             }

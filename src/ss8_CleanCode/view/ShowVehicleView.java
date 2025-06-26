@@ -1,14 +1,20 @@
 package ss8_CleanCode.view;
 
-import ss8_CleanCode.controller.ShowVehicleController;
+import ss8_CleanCode.controller.VehicleController.CarController;
+import ss8_CleanCode.controller.VehicleController.MotorbikeController;
+import ss8_CleanCode.controller.VehicleController.TruckController;
 import ss8_CleanCode.entity.Car;
 import ss8_CleanCode.entity.Motorbike;
 import ss8_CleanCode.entity.Truck;
+import ss8_CleanCode.entity.Vehicle;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class ShowVehicleView {
+    private static CarController carController = new CarController();
+    private static MotorbikeController motorbikeController = new MotorbikeController();
+    private static TruckController truckController = new TruckController();
     public static void showVehicleMenu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Hiển thị phương tiện: ");
@@ -18,27 +24,14 @@ public class ShowVehicleView {
         System.out.print("Mời bạn nhập lựa chọn: ");
         int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
-            case 1: showTrucks();break;
-            case 2: showCars();break;
-            case 3: showMotorbikes();break;
+            case 1: showVehicle(truckController.showAllTrucks());break;
+            case 2: showVehicle(carController.showAllCars());break;
+            case 3: showVehicle(motorbikeController.showAllMotorbikes());break;
         }
     }
-    public static void showCars() {
-        List<Car> cars=null;
-        for (Car car : cars) {
-            System.out.println(car.toString());
-        }
-    }
-    public static void showMotorbikes() {
-        List<Motorbike> motorbikes =null;
-        for (Motorbike motorbike: motorbikes) {
-            System.out.println(motorbike.toString());
-        }
-    }
-    public static void showTrucks() {
-        List<Truck> trucks =null;
-        for (Truck truck: trucks) {
-            System.out.println(truck.toString());
+    public static <T extends Vehicle> void showVehicle(List<T> vehicles) {
+        for (Vehicle vehicle : vehicles) {
+            System.out.println(vehicle.toString());
         }
     }
 }

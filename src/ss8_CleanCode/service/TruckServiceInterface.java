@@ -5,10 +5,10 @@ import ss8_CleanCode.entity.Truck;
 import java.util.List;
 
 
-public interface TruckInterface {
+public interface TruckServiceInterface {
 
     void addTruck(Truck truck);
     List<Truck> showAllTrucks();
-    void removeTruck(Truck truck);
+    boolean removeTruck(Truck truck);
     Truck findTruckByPlate(String licensePlate);
 }

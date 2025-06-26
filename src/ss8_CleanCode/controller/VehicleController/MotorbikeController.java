@@ -7,7 +7,7 @@ import ss8_CleanCode.service.*;
 import java.util.List;
 
 public class MotorbikeController {
-    private MotorbikeInterface motorbikeService = new MotorbikeService();
+    private MotorServicebikeInterface motorbikeService = new MotorbikeService();
 
     public void add(Motorbike motorbike){
         motorbikeService.addMotorbike(motorbike);
@@ -15,7 +15,10 @@ public class MotorbikeController {
     public List<Motorbike> showAllMotorbikes(){
         return motorbikeService.showAllMotorbikes();
     }
-    public void remove(String plate){
-        motorbikeService.removeMotorbike(motorbikeService.findMotorbikeByPlate(plate));
+    public boolean remove(String plate){
+        return motorbikeService.removeMotorbike(findMotorbikeByPlate(plate));
+    }
+    public Motorbike findMotorbikeByPlate(String plate){
+        return motorbikeService.findMotorbikeByPlate(plate);
     }
 }

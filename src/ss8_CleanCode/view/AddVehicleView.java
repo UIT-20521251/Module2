@@ -27,18 +27,18 @@ public class AddVehicleView {
         int choice =  Integer.parseInt(scanner.nextLine());
         switch (choice) {
             case 1:
-                truckController.add(addTruckMenu());
+                truckController.add(addTruckInput());
                 break;
             case 2:
-                carController.add(addCarMenu());
+                carController.add(addCarInput());
                 break;
             case 3:
-                motorbikeController.add(addMotorbikeMenu());
+                motorbikeController.add(addMotorbikeInput());
                 break;
 
         }
     }
-    public static Car addCarMenu() {
+    public static Car addCarInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Thêm mới ôtô: ");
         System.out.print("Biển kiểm soát (vd: 43A-123.45): ");
@@ -46,16 +46,16 @@ public class AddVehicleView {
         String brandCode = inputBrand();
         Brand brand = brandController.findBrandByCode(brandCode);
         System.out.print("Năm sản xuất: ");
-        int productionYear = Integer.parseInt(scanner.nextLine());
+        int productionYear = Integer.parseInt(scanner.nextLine().trim());
         System.out.print("Chủ sở hữu: ");
         String owner = scanner.nextLine();
         System.out.print("Số chổ ngồi: ");
-        int numberOfSeats = Integer.parseInt(scanner.nextLine());
+        int numberOfSeats = Integer.parseInt(scanner.nextLine().trim());
         System.out.print("Kiểu xe: ");
         String carType = scanner.nextLine();
         return new Car(licensePlate, brand, productionYear, owner,numberOfSeats, carType);
     }
-    public static Motorbike addMotorbikeMenu() {
+    public static Motorbike addMotorbikeInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Thêm mới xe máy: ");
         System.out.print("Biển kiểm soát (vd: 43A-123.45): ");
@@ -63,14 +63,14 @@ public class AddVehicleView {
         String brandCode = inputBrand();
         Brand brand = brandController.findBrandByCode(brandCode);
         System.out.print("Năm sản xuất: ");
-        int productionYear = Integer.parseInt(scanner.nextLine());
+        int productionYear = Integer.parseInt(scanner.nextLine().trim());
         System.out.print("Chủ sở hữu: ");
         String owner = scanner.nextLine();
         System.out.print("Công suất: ");
-        int horsepower = Integer.parseInt(scanner.nextLine());
+        int horsepower = Integer.parseInt(scanner.nextLine().trim());
         return new Motorbike(licensePlate, brand, productionYear, owner,horsepower);
     }
-    public static Truck addTruckMenu() {
+    public static Truck addTruckInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Thêm mới ôtô: ");
         System.out.print("Biển kiểm soát (vd: 43A-123.45): ");
@@ -78,11 +78,11 @@ public class AddVehicleView {
         String brandCode = inputBrand();
         Brand brand = brandController.findBrandByCode(brandCode);
         System.out.print("Năm sản xuất: ");
-        int productionYear = Integer.parseInt(scanner.nextLine());
+        int productionYear = Integer.parseInt(scanner.nextLine().trim());
         System.out.print("Chủ sở hữu: ");
         String owner = scanner.nextLine();
         System.out.print("Tải trọng: ");
-        int loadCapacity = Integer.parseInt(scanner.nextLine());
+        int loadCapacity = Integer.parseInt(scanner.nextLine().trim());
         return new Truck(licensePlate, brand, productionYear, owner, loadCapacity);
     }
 

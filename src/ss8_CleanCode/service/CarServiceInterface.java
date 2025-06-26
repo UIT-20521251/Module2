@@ -4,10 +4,10 @@ import ss8_CleanCode.entity.Car;
 
 import java.util.List;
 
-public interface CarInterface {
+public interface CarServiceInterface {
     void addCar(Car car);
     List<Car> showAllCars();
-    void removeCar(Car car);
+    boolean removeCar(Car car);
     Car findCarByPlate(String plate);
 
 }

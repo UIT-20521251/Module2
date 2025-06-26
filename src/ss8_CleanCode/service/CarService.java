@@ -1,15 +1,11 @@
 package ss8_CleanCode.service;
 
 import ss8_CleanCode.entity.Car;
-import ss8_CleanCode.entity.Motorbike;
-import ss8_CleanCode.entity.Truck;
 import ss8_CleanCode.repository.CarRepository;
-import ss8_CleanCode.repository.MotorbikeRepository;
-import ss8_CleanCode.repository.TruckRepository;
 
 import java.util.List;
 
-public class CarService implements CarInterface {
+public class CarService implements CarServiceInterface {
     private CarRepository carRepository = new CarRepository();
     @Override
     public void addCar(Car car) {
@@ -17,16 +13,16 @@ public class CarService implements CarInterface {
     }
     @Override
     public List<Car> showAllCars() {
-        return carRepository.getCars();
+        return carRepository.findAllCars();
     }
     @Override
-    public void removeCar(Car car) {
-        carRepository.remove(car);
+    public boolean removeCar(Car car) {
+        return carRepository.remove(car);
     }
 
     @Override
     public Car findCarByPlate(String plate) {
-        for (Car car : carRepository.getCars()) {
+        for (Car car : carRepository.findAllCars()) {
             if (car.getLicensePlate().equals(plate)) {
                 return car;
             }

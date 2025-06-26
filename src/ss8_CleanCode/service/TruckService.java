@@ -1,36 +1,32 @@
 package ss8_CleanCode.service;
 
-import ss8_CleanCode.entity.Car;
-import ss8_CleanCode.entity.Motorbike;
 import ss8_CleanCode.entity.Truck;
-import ss8_CleanCode.repository.CarRepository;
-import ss8_CleanCode.repository.MotorbikeRepository;
 import ss8_CleanCode.repository.TruckRepository;
 
 import java.util.List;
 
-public class TruckService implements TruckInterface {
+public class TruckService implements TruckServiceInterface {
     TruckRepository truckRepository = new TruckRepository();
 
     @Override
     public void addTruck(Truck truck) {
         truckRepository.add(truck);
-        System.out.println(truckRepository.getTrucks().size());
+        System.out.println(truckRepository.findAllTrucks().size());
     }
 
     @Override
     public List<Truck> showAllTrucks() {
-        return truckRepository.getTrucks();
+        return truckRepository.findAllTrucks();
     }
 
     @Override
-    public void removeTruck(Truck truck) {
-        truckRepository.remove(truck);
+    public boolean removeTruck(Truck truck) {
+        return truckRepository.remove(truck);
     }
 
     @Override
     public Truck findTruckByPlate(String plate) {
-        for (Truck truck : truckRepository.getTrucks()) {
+        for (Truck truck : truckRepository.findAllTrucks()) {
             if (truck.getLicensePlate().equals(plate)) {
                 return truck;
             }
