@@ -3,9 +3,6 @@ package ss8_CleanCode.view;
 import ss8_CleanCode.controller.VehicleController.CarController;
 import ss8_CleanCode.controller.VehicleController.MotorbikeController;
 import ss8_CleanCode.controller.VehicleController.TruckController;
-import ss8_CleanCode.entity.Car;
-import ss8_CleanCode.entity.Motorbike;
-import ss8_CleanCode.entity.Truck;
 import ss8_CleanCode.entity.Vehicle;
 
 import java.util.List;
@@ -29,7 +26,7 @@ public class ShowVehicleView {
             case 3: showVehicle(motorbikeController.showAllMotorbikes());break;
         }
     }
-    public static <T extends Vehicle> void showVehicle(List<T> vehicles) {
+    private static <T extends Vehicle> void showVehicle(List<T> vehicles) {
         for (Vehicle vehicle : vehicles) {
             System.out.println(vehicle.toString());
         }

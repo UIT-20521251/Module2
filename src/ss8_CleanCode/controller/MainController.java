@@ -27,7 +27,7 @@ public class MainController {
                     isPause = false;
                     break;
                 default:
-                    throw new IllegalStateException("Unexpected value: " + choice);
+                    System.out.println("Lựa chọn không hợp lệ!");
             }
         }
 

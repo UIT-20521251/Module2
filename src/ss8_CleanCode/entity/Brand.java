@@ -1,11 +1,13 @@
 package ss8_CleanCode.entity;
 
 public class Brand {
+    private int id;
     private String BrandCode;
     private String BrandName;
     private String Country;
 
-    public Brand(String brandCode, String brandName, String country) {
+    public Brand(int id,String brandCode, String brandName, String country) {
+        this.id = id;
         this.BrandCode = brandCode;
         this.BrandName = brandName;
         this.Country = country;
@@ -22,6 +24,9 @@ public class Brand {
     public String getCountry() {
         return Country;
     }
+    public int getId() {
+        return id;
+    }
 
     public void setBrandCode(String brandCode) {
         BrandCode = brandCode;
@@ -36,6 +41,6 @@ public class Brand {
     }
     @Override
     public String toString() {
-        return BrandCode + ", " + BrandName + ", " + Country;
+        return id+", "+BrandCode + ", " + BrandName + ", " + Country;
     }
 }

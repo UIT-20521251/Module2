@@ -12,8 +12,8 @@ public class BrandController {
     public List<Brand> showAllBrands(){
         return brandService.getBrandList();
     }
-    public Brand findBrandByCode(String brandCode){
-        return brandService.findBrandByCode(brandCode);
+    public Brand findBrandById(int id){
+        return brandService.findBrandById(id);
     }
     public Brand findBrandByName(String brandName){
         return brandService.findBrandByName(brandName);

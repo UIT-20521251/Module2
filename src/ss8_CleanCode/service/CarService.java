@@ -1,12 +1,13 @@
 package ss8_CleanCode.service;
 
 import ss8_CleanCode.entity.Car;
+import ss8_CleanCode.repository.CarRepoInterface;
 import ss8_CleanCode.repository.CarRepository;
 
 import java.util.List;
 
 public class CarService implements CarServiceInterface {
-    private CarRepository carRepository = new CarRepository();
+    private CarRepoInterface carRepository = new CarRepository();
     @Override
     public void addCar(Car car) {
         carRepository.add(car);

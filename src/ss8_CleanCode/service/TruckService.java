@@ -1,17 +1,17 @@
 package ss8_CleanCode.service;
 
 import ss8_CleanCode.entity.Truck;
+import ss8_CleanCode.repository.TruckRepoInterface;
 import ss8_CleanCode.repository.TruckRepository;
 
 import java.util.List;
 
 public class TruckService implements TruckServiceInterface {
-    TruckRepository truckRepository = new TruckRepository();
+    private static TruckRepoInterface truckRepository = new TruckRepository();
 
     @Override
     public void addTruck(Truck truck) {
         truckRepository.add(truck);
-        System.out.println(truckRepository.findAllTrucks().size());
     }
 
     @Override

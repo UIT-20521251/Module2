@@ -5,14 +5,21 @@ import java.util.Scanner;
 public class MainView {
     public static int displayMainView() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("CHƯƠNG TRÌNH QUẢN LÝ PHƯƠNG TIỆN GIAO THÔNG");
-        System.out.println("Chọn chức năng:");
-        System.out.println("1. Thêm mới phương tiện");
-        System.out.println("2. Hiện thị phương tiện");
-        System.out.println("3. Xóa phương tiện");
-        System.out.println("4. Thoát");
-        System.out.print("Mời bạn nhập lựa chọn: ");
-        return Integer.parseInt(scanner.nextLine());
+        int choice = -1;
+        while (true) {
+            try {
+                System.out.println("------ MENU ------");
+                System.out.println("1. Thêm phương tiện");
+                System.out.println("2. Hiển thị phương tiện");
+                System.out.println("3. Xóa phương tiện");
+                System.out.println("4. Thoát");
+                System.out.print("Nhập lựa chọn: ");
+                choice = Integer.parseInt(scanner.nextLine().trim());
+                return choice;
+            } catch (NumberFormatException e) {
+                System.out.println("Vui lòng nhập một lựa chọn hợp lệ!");
+            }
+        }
     }
 }
 

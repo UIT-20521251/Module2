@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface BrandServiceInterface {
      List<Brand> getBrandList();
-     Brand findBrandByCode(String brandCode);
+     Brand findBrandById(int id);
      Brand findBrandByName(String brandName);
 }

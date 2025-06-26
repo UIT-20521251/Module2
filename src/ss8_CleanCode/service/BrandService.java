@@ -1,16 +1,17 @@
 package ss8_CleanCode.service;
 
 import ss8_CleanCode.entity.Brand;
+import ss8_CleanCode.repository.BrandRepoInterface;
 import ss8_CleanCode.repository.BrandRepository;
 
 import java.util.List;
 
 public class BrandService implements BrandServiceInterface {
-    private BrandRepository brandRepository = new BrandRepository();
+    private BrandRepoInterface brandRepository = new BrandRepository();
     @Override
-    public Brand findBrandByCode(String brandCode) {
+    public Brand findBrandById(int id) {
         for (Brand brand : brandRepository.getBrands()) {
-            if (brand.getBrandCode().equals(brandCode)) {
+            if (brand.getId()==id) {
                 return brand;
             }
         }

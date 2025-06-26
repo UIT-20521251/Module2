@@ -8,6 +8,7 @@ import ss8_CleanCode.entity.Brand;
 import ss8_CleanCode.entity.Car;
 import ss8_CleanCode.entity.Motorbike;
 import ss8_CleanCode.entity.Truck;
+import ss8_CleanCode.regex.CheckRegex;
 
 import java.util.List;
 import java.util.Scanner;
@@ -35,16 +36,23 @@ public class AddVehicleView {
             case 3:
                 motorbikeController.add(addMotorbikeInput());
                 break;
+            default:
+                System.out.println("Lựa chọn không hợp lệ: " + choice);
+                break;
 
         }
     }
-    public static Car addCarInput() {
+    private static Car addCarInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Thêm mới ôtô: ");
         System.out.print("Biển kiểm soát (vd: 43A-123.45): ");
         String licensePlate = scanner.nextLine();
-        String brandCode = inputBrand();
-        Brand brand = brandController.findBrandByCode(brandCode);
+        while (!CheckRegex.checkLicensePlate(licensePlate)){
+            System.out.println("Định dạng biển khiểm soát không đúng!");
+            System.out.print("Nhập lại biển khiểm soát (vd: 43A-12345): ");
+            licensePlate = scanner.nextLine();
+        }
+        Brand brand = inputBrand();
         System.out.print("Năm sản xuất: ");
         int productionYear = Integer.parseInt(scanner.nextLine().trim());
         System.out.print("Chủ sở hữu: ");
@@ -55,13 +63,17 @@ public class AddVehicleView {
         String carType = scanner.nextLine();
         return new Car(licensePlate, brand, productionYear, owner,numberOfSeats, carType);
     }
-    public static Motorbike addMotorbikeInput() {
+    private static Motorbike addMotorbikeInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Thêm mới xe máy: ");
         System.out.print("Biển kiểm soát (vd: 43A-123.45): ");
         String licensePlate = scanner.nextLine();
-        String brandCode = inputBrand();
-        Brand brand = brandController.findBrandByCode(brandCode);
+        while (!CheckRegex.checkLicensePlate(licensePlate)){
+            System.out.println("Định dạng biển khiểm soát không đúng!");
+            System.out.print("Nhập lại biển khiểm soát (vd: 43A-12345): ");
+            licensePlate = scanner.nextLine();
+        }
+        Brand brand = inputBrand();
         System.out.print("Năm sản xuất: ");
         int productionYear = Integer.parseInt(scanner.nextLine().trim());
         System.out.print("Chủ sở hữu: ");
@@ -70,13 +82,17 @@ public class AddVehicleView {
         int horsepower = Integer.parseInt(scanner.nextLine().trim());
         return new Motorbike(licensePlate, brand, productionYear, owner,horsepower);
     }
-    public static Truck addTruckInput() {
+    private static Truck addTruckInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Thêm mới ôtô: ");
-        System.out.print("Biển kiểm soát (vd: 43A-123.45): ");
+        System.out.print("Biển kiểm soát (vd: 43A-12345): ");
         String licensePlate = scanner.nextLine();
-        String brandCode = inputBrand();
-        Brand brand = brandController.findBrandByCode(brandCode);
+        while (!CheckRegex.checkLicensePlate(licensePlate)){
+            System.out.println("Định dạng biển khiểm soát không đúng!");
+            System.out.print("Nhập lại biển khiểm soát (vd: 43A-12345): ");
+            licensePlate = scanner.nextLine();
+        }
+        Brand brand = inputBrand();
         System.out.print("Năm sản xuất: ");
         int productionYear = Integer.parseInt(scanner.nextLine().trim());
         System.out.print("Chủ sở hữu: ");
@@ -86,14 +102,32 @@ public class AddVehicleView {
         return new Truck(licensePlate, brand, productionYear, owner, loadCapacity);
     }
 
-    public static String inputBrand() {
-        List<Brand> brands =brandController.showAllBrands();
+    private static Brand inputBrand() {
+        List<Brand> brands = brandController.showAllBrands();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Hãng sản xuất: ");
-        for (Brand brand : brands) {
-            System.out.println(brand.toString());
+        Brand selectedBrand = null;
+
+        while (selectedBrand == null) {
+            System.out.println("Danh sách hãng sản xuất:");
+            for (Brand brand : brands) {
+                System.out.println(brand.toString());
+            }
+
+            System.out.print("Hãng xe của bạn (Nhập ID hãng): ");
+            String input = scanner.nextLine().trim();
+
+            try {
+                int id = Integer.parseInt(input);
+                selectedBrand = brandController.findBrandById(id);
+
+                if (selectedBrand == null) {
+                    System.out.println("Không tìm thấy hãng với ID đã nhập. Vui lòng thử lại.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Vui lòng nhập một số nguyên hợp lệ.");
+            }
         }
-        System.out.print("Hãng xe của bạn (Nhập mã hãng sản xuất): ");
-        return scanner.nextLine();
+
+        return selectedBrand;
     }
 }
