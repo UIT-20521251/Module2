@@ -1,4 +1,4 @@
-package ss8_CleanCode.regex;
+package ss8_CleanCode.util;
 
 public class CheckRegex {
     public static boolean checkClasName(String className){

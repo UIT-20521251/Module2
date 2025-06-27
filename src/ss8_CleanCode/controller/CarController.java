@@ -1,4 +1,4 @@
-package ss8_CleanCode.controller.VehicleController;
+package ss8_CleanCode.controller;
 
 import ss8_CleanCode.entity.Car;
 import ss8_CleanCode.service.CarServiceInterface;

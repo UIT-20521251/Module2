@@ -1,8 +1,8 @@
 package ss8_CleanCode.view;
 
-import ss8_CleanCode.controller.VehicleController.CarController;
-import ss8_CleanCode.controller.VehicleController.MotorbikeController;
-import ss8_CleanCode.controller.VehicleController.TruckController;
+import ss8_CleanCode.controller.CarController;
+import ss8_CleanCode.controller.MotorbikeController;
+import ss8_CleanCode.controller.TruckController;
 
 import java.util.Scanner;
 

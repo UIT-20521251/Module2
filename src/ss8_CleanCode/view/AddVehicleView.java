@@ -1,14 +1,14 @@
 package ss8_CleanCode.view;
 
 import ss8_CleanCode.controller.BrandController;
-import ss8_CleanCode.controller.VehicleController.CarController;
-import ss8_CleanCode.controller.VehicleController.MotorbikeController;
-import ss8_CleanCode.controller.VehicleController.TruckController;
+import ss8_CleanCode.controller.CarController;
+import ss8_CleanCode.controller.MotorbikeController;
+import ss8_CleanCode.controller.TruckController;
 import ss8_CleanCode.entity.Brand;
 import ss8_CleanCode.entity.Car;
 import ss8_CleanCode.entity.Motorbike;
 import ss8_CleanCode.entity.Truck;
-import ss8_CleanCode.regex.CheckRegex;
+import ss8_CleanCode.util.CheckRegex;
 
 import java.util.List;
 import java.util.Scanner;
