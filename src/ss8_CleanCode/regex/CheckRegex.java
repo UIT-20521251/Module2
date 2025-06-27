@@ -6,7 +6,7 @@ public class CheckRegex {
         return  className.matches(regexClasName);
     }
     public static boolean checkPhoneNum(String num){
-        String regexPhoneNum = "^[0-9]{10}$";
+        String regexPhoneNum = "^0[1-9][0-9]{8,9}$";
         return  num.matches(regexPhoneNum);
     }
     public static boolean checkLicensePlate(String licensePlate){
