@@ -14,6 +14,6 @@
 <p><strong>Discount Price:</strong> $${discountPrice}</p>
 
 <br>
-<a href="index.jsp">Back</a>
+<a href="../index.jsp">Back</a>
 </body>
 </html>
