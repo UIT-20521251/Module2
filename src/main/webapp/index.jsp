@@ -7,17 +7,10 @@
 </head>
 <body>
 <h2>Product Discount Calculator</h2>
-<form action="display-discount" method="post">
-    <label>Product Description:</label><br/>
-    <input type="text" name="description" required><br/><br/>
+<a href="/BT9"> <span>BT 9</span></a>
+<br>
+<a href="/BT10-Customer"> <span>BT 10 Customer</span></a>
+<a href="/BT10-Calculator"> <span>BT 10 Calculator</span></a>
 
-    <label>List Price:</label><br/>
-    <input type="number" name="price" step="0.01" required><br/><br/>
-
-    <label>Discount Percent:</label><br/>
-    <input type="number" name="discount" step="0.01" required><br/><br/>
-
-    <input type="submit" value="Calculate Discount">
-</form>
 </body>
 </html>
